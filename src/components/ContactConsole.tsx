@@ -9,25 +9,25 @@ export const ContactConsole = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const [consoleOutput, setConsoleOutput] = useState([
     "> MVSI Communication Protocol Initialized",
     "> Ready to establish connection...",
-    "> Type your message and press SEND to transmit"
+    "> Type your message and press SEND to transmit",
   ]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    setConsoleOutput(prev => [
+
+    setConsoleOutput((prev) => [
       ...prev,
       `> Transmitting message from ${formData.name}...`,
       `> Email: ${formData.email}`,
       `> Status: SENT TO MULTIVERSE`,
       `> Response expected within 24 Earth hours`,
-      "> Connection terminated successfully"
+      "> Connection terminated successfully",
     ]);
 
     // Reset form
@@ -35,7 +35,7 @@ export const ContactConsole = () => {
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -94,7 +94,9 @@ export const ContactConsole = () => {
                   </label>
                   <Textarea
                     value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange("message", e.target.value)
+                    }
                     placeholder="Describe your vision for collaborative innovation..."
                     className="glass font-cyber min-h-32"
                     required
@@ -140,22 +142,42 @@ export const ContactConsole = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <Button variant="holographic" className="w-full justify-start" asChild>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="holographic"
+                    className="w-full justify-start"
+                    asChild
+                  >
+                    <a
+                      href="https://github.com/Dear0001"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Github className="w-5 h-5 mr-3" />
                       <span className="font-cyber">GitHub Repository</span>
                     </a>
                   </Button>
-                  
-                  <Button variant="holographic" className="w-full justify-start" asChild>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+
+                  <Button
+                    variant="holographic"
+                    className="w-full justify-start"
+                    asChild
+                  >
+                    <a
+                      href="https://www.linkedin.com/in/dalen-phea-390148260/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Linkedin className="w-5 h-5 mr-3" />
                       <span className="font-cyber">LinkedIn Network</span>
                     </a>
                   </Button>
-                  
-                  <Button variant="holographic" className="w-full justify-start" asChild>
-                    <a href="mailto:contact@mvs-innovator.dev">
+
+                  <Button
+                    variant="holographic"
+                    className="w-full justify-start"
+                    asChild
+                  >
+                    <a href="mailto:dalensophea34@gmail.com">
                       <Mail className="w-5 h-5 mr-3" />
                       <span className="font-cyber">Direct Email Link</span>
                     </a>
@@ -171,13 +193,22 @@ export const ContactConsole = () => {
           <div className="absolute top-4 left-8 floating opacity-50">
             <div className="w-2 h-2 bg-primary rounded-full pulse-glow"></div>
           </div>
-          <div className="absolute top-12 left-1/3 floating opacity-50" style={{ animationDelay: '1s' }}>
+          <div
+            className="absolute top-12 left-1/3 floating opacity-50"
+            style={{ animationDelay: "1s" }}
+          >
             <div className="w-1 h-1 bg-secondary rounded-full pulse-glow"></div>
           </div>
-          <div className="absolute top-8 right-1/4 floating opacity-50" style={{ animationDelay: '2s' }}>
+          <div
+            className="absolute top-8 right-1/4 floating opacity-50"
+            style={{ animationDelay: "2s" }}
+          >
             <div className="w-3 h-3 bg-accent rounded-full pulse-glow"></div>
           </div>
-          <div className="absolute top-16 right-8 floating opacity-50" style={{ animationDelay: '3s' }}>
+          <div
+            className="absolute top-16 right-8 floating opacity-50"
+            style={{ animationDelay: "3s" }}
+          >
             <div className="w-2 h-2 bg-primary rounded-full pulse-glow"></div>
           </div>
         </div>

@@ -1,8 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Code2, Database, Globe, ArrowRight } from "lucide-react";
-import profileAvatar from "@/assets/profile-avatar.jpg";
+import {
+  GraduationCap,
+  Code2,
+  Database,
+  Globe,
+  ArrowRight,
+} from "lucide-react";
+import profileAvatar from "@/assets/my-image.jpg";
 
 interface Skill {
   name: string;
@@ -16,20 +22,20 @@ const currentSkills: Skill[] = [
     name: "Frontend Development",
     category: "Client-Side",
     icon: Globe,
-    description: "React, Next.js, Modern UI/UX"
+    description: "React, Next.js, Modern UI/UX",
   },
   {
-    name: "Backend Engineering", 
+    name: "Backend Engineering",
     category: "Server-Side",
     icon: Code2,
-    description: "Java Spring, REST APIs, Microservices"
+    description: "Java Spring, REST APIs, Microservices",
   },
   {
     name: "Database Systems",
     category: "Data Layer",
     icon: Database,
-    description: "MySQL, PostgreSQL, Data Architecture"
-  }
+    description: "MySQL, PostgreSQL, Data Architecture",
+  },
 ];
 
 export const AboutMe = () => {
@@ -52,9 +58,9 @@ export const AboutMe = () => {
             <div className="relative mb-8 flex justify-center lg:justify-start">
               <div className="relative">
                 <div className="w-64 h-64 rounded-full overflow-hidden glass glow-primary">
-                  <img 
-                    src={profileAvatar} 
-                    alt="Tech Innovator Profile" 
+                  <img
+                    src={profileAvatar}
+                    alt="Tech Innovator Profile"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -67,27 +73,37 @@ export const AboutMe = () => {
             {/* Bio Text */}
             <div className="space-y-6">
               <h3 className="text-2xl font-cyber font-bold text-primary mb-4">
-                Mission Statement
+                I am PHEA Dalen
               </h3>
-              
+
               <p className="text-foreground leading-relaxed">
                 I am currently pursuing a bachelor's degree in{" "}
-                <span className="text-primary font-cyber">Information Technology Engineering</span> at{" "}
-                <span className="text-secondary font-cyber">Royal Phnom Penh University</span>, 
-                where I'm building a strong foundation in advanced computing systems and software architecture.
+                <span className="text-primary font-cyber">
+                  Information Technology Engineering
+                </span>{" "}
+                at{" "}
+                <span className="text-secondary font-cyber">
+                  Royal Phnom Penh University
+                </span>
+                , where I'm building a strong foundation in advanced computing
+                systems and software architecture.
               </p>
 
               <p className="text-foreground leading-relaxed">
                 Simultaneously, I'm enrolled in a comprehensive{" "}
-                <span className="text-accent font-cyber">Full-Stack Web Development program</span> at{" "}
-                <span className="text-secondary font-cyber">HRD Center</span>, gaining hands-on experience 
-                in cutting-edge technologies that power the modern web.
+                <span className="text-accent font-cyber">
+                  Full-Stack Web Development program
+                </span>{" "}
+                at <span className="text-secondary font-cyber">HRD Center</span>
+                , gaining hands-on experience in cutting-edge technologies that
+                power the modern web.
               </p>
 
               <p className="text-foreground leading-relaxed">
-                I am eager to apply my academic knowledge and practical skills to contribute to 
-                innovative projects and make a meaningful impact in the tech industry, driving 
-                digital transformation and creating solutions for tomorrow's challenges.
+                I am eager to apply my academic knowledge and practical skills
+                to contribute to innovative projects and make a meaningful
+                impact in the tech industry, driving digital transformation and
+                creating solutions for tomorrow's challenges.
               </p>
 
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
@@ -110,12 +126,15 @@ export const AboutMe = () => {
             <h3 className="text-2xl font-cyber font-bold text-secondary mb-6 text-center lg:text-left">
               Current Focus Areas
             </h3>
-            
+
             {currentSkills.map((skill, index) => {
               const IconComponent = skill.icon;
-              
+
               return (
-                <Card key={skill.name} className="holographic transition-all duration-500 hover:scale-105">
+                <Card
+                  key={skill.name}
+                  className="holographic transition-all duration-500 hover:scale-105"
+                >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
@@ -123,7 +142,7 @@ export const AboutMe = () => {
                           <IconComponent className="w-6 h-6 text-primary-foreground" />
                         </div>
                       </div>
-                      
+
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-2">
                           <h4 className="font-cyber font-bold text-foreground">
