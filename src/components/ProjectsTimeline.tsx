@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Code, Users, Zap } from "lucide-react";
+import { ProjectDetailModal } from "./ProjectDetailModal";
 
 interface Project {
   id: string;
@@ -63,6 +65,7 @@ const projects: Project[] = [
 ];
 
 export const ProjectsTimeline = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -148,7 +151,12 @@ export const ProjectsTimeline = () => {
                           ))}
                         </div>
 
-                        <Button variant="holographic" size="sm" className="w-full">
+                        <Button 
+                          variant="holographic" 
+                          size="sm" 
+                          className="w-full"
+                          onClick={() => setSelectedProject(project)}
+                        >
                           <ExternalLink className="w-4 h-4 mr-2" />
                           View Details
                         </Button>
@@ -166,6 +174,13 @@ export const ProjectsTimeline = () => {
             })}
           </div>
         </div>
+
+        {/* Project Detail Modal */}
+        <ProjectDetailModal 
+          project={selectedProject}
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       </div>
     </section>
   );

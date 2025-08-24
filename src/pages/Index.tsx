@@ -1,3 +1,4 @@
+import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutMe } from "@/components/AboutMe";
 import { SkillsUniverse } from "@/components/SkillsUniverse";
@@ -8,12 +9,25 @@ import { ContactConsole } from "@/components/ContactConsole";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <HeroSection />
-      <AboutMe />
-      <SkillsUniverse />
-      <ProjectsTimeline />
-      <EducationArchive />
-      <ContactConsole />
+      <Navigation />
+      <section id="hero">
+        <HeroSection />
+      </section>
+      <section id="about">
+        <AboutMe />
+      </section>
+      <section id="skills">
+        <SkillsUniverse />
+      </section>
+      <section id="projects">
+        <ProjectsTimeline />
+      </section>
+      <section id="education">
+        <EducationArchive />
+      </section>
+      <section id="contact">
+        <ContactConsole />
+      </section>
       
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border/50">
