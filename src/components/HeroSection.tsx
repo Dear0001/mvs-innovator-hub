@@ -31,14 +31,14 @@ export const HeroSection = () => {
       </div>
 
       {/* Floating Icons */}
-      <div className="absolute top-20 left-20 floating opacity-30">
-        <Code className="w-8 h-8 text-primary" />
+      <div className="absolute top-10 sm:top-20 left-4 sm:left-20 floating opacity-30 hidden sm:block">
+        <Code className="w-6 sm:w-8 h-6 sm:h-8 text-primary" />
       </div>
-      <div className="absolute top-32 right-32 floating opacity-30" style={{ animationDelay: '2s' }}>
-        <Zap className="w-6 h-6 text-accent" />
+      <div className="absolute top-16 sm:top-32 right-4 sm:right-32 floating opacity-30 hidden sm:block" style={{ animationDelay: '2s' }}>
+        <Zap className="w-4 sm:w-6 h-4 sm:h-6 text-accent" />
       </div>
-      <div className="absolute bottom-40 right-20 floating opacity-30" style={{ animationDelay: '4s' }}>
-        <Cpu className="w-10 h-10 text-secondary" />
+      <div className="absolute bottom-20 sm:bottom-40 right-4 sm:right-20 floating opacity-30 hidden sm:block" style={{ animationDelay: '4s' }}>
+        <Cpu className="w-8 sm:w-10 h-8 sm:h-10 text-secondary" />
       </div>
 
       {/* Main Content */}
@@ -56,31 +56,31 @@ export const HeroSection = () => {
         </div>
 
         {/* Animated Title */}
-        <h1 className="text-5xl md:text-7xl font-cyber font-bold mb-6 neon-text min-h-[1.2em]">
-          <span className="inline-block">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-cyber font-bold mb-6 neon-text min-h-[1.2em] px-4">
+          <span className="inline-block break-words">
             {displayText}
             <span className="animate-pulse">|</span>
           </span>
         </h1>
 
         {/* Tagline */}
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-cyber">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 font-cyber px-4">
           {tagline}
         </p>
 
         {/* Holographic Stats */}
-        <div className="grid grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
-          <div className="glass rounded-lg p-4 pulse-glow">
-            <div className="text-2xl font-bold text-primary">2050</div>
-            <div className="text-sm text-muted-foreground">Future Ready</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 max-w-3xl mx-auto px-4">
+          <div className="glass rounded-lg p-3 sm:p-4 pulse-glow">
+            <div className="text-xl sm:text-2xl font-bold text-primary">2050</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Future Ready</div>
           </div>
-          <div className="glass rounded-lg p-4 pulse-glow" style={{ animationDelay: '0.5s' }}>
-            <div className="text-2xl font-bold text-secondary">10+</div>
-            <div className="text-sm text-muted-foreground">Technologies</div>
+          <div className="glass rounded-lg p-3 sm:p-4 pulse-glow" style={{ animationDelay: '0.5s' }}>
+            <div className="text-xl sm:text-2xl font-bold text-secondary">10+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Technologies</div>
           </div>
-          <div className="glass rounded-lg p-4 pulse-glow" style={{ animationDelay: '1s' }}>
-            <div className="text-2xl font-bold text-accent">∞</div>
-            <div className="text-sm text-muted-foreground">Possibilities</div>
+          <div className="glass rounded-lg p-3 sm:p-4 pulse-glow" style={{ animationDelay: '1s' }}>
+            <div className="text-xl sm:text-2xl font-bold text-accent">∞</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Possibilities</div>
           </div>
         </div>
 

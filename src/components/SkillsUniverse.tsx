@@ -71,16 +71,16 @@ export const SkillsUniverse = () => {
         </div>
 
         {/* Galaxy Map */}
-        <div className="relative h-[600px] mx-auto max-w-4xl">
+        <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] mx-auto max-w-4xl">
           {/* Central Hub */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="w-16 h-16 rounded-full bg-gradient-hero glow-primary pulse-glow"></div>
+            <div className="w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-gradient-hero glow-primary pulse-glow"></div>
           </div>
 
           {/* Skill Planets */}
           {skills.map((skill, index) => {
             const angle = (index * 60) * (Math.PI / 180);
-            const radius = 200;
+            const radius = window.innerWidth < 640 ? 120 : window.innerWidth < 1024 ? 160 : 200;
             const x = Math.cos(angle) * radius;
             const y = Math.sin(angle) * radius;
 
@@ -95,14 +95,14 @@ export const SkillsUniverse = () => {
                 onClick={() => setSelectedSkill(selectedSkill?.name === skill.name ? null : skill)}
               >
                 <div className={`
-                  w-20 h-20 rounded-full glass flex items-center justify-center
+                  w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 rounded-full glass flex items-center justify-center
                   ${skill.color === 'primary' ? 'glow-primary' : ''}
                   ${skill.color === 'secondary' ? 'glow-secondary' : ''}
                   ${skill.color === 'accent' ? 'glow-accent' : ''}
-                  ${selectedSkill?.name === skill.name ? 'scale-150' : ''}
+                  ${selectedSkill?.name === skill.name ? 'scale-125 sm:scale-150' : ''}
                 `}>
                   <div className={`
-                    w-12 h-12 rounded-full
+                    w-6 sm:w-8 lg:w-12 h-6 sm:h-8 lg:h-12 rounded-full
                     ${skill.color === 'primary' ? 'bg-primary' : ''}
                     ${skill.color === 'secondary' ? 'bg-secondary' : ''}
                     ${skill.color === 'accent' ? 'bg-accent' : ''}
@@ -111,8 +111,8 @@ export const SkillsUniverse = () => {
                 </div>
                 
                 {/* Skill Name */}
-                <div className="absolute top-24 left-1/2 transform -translate-x-1/2 text-center">
-                  <p className="text-sm font-cyber text-foreground whitespace-nowrap">
+                <div className="absolute top-16 sm:top-20 lg:top-24 left-1/2 transform -translate-x-1/2 text-center">
+                  <p className="text-xs sm:text-sm font-cyber text-foreground whitespace-nowrap">
                     {skill.name.split(' ')[0]}
                   </p>
                 </div>

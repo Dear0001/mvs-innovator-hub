@@ -106,7 +106,7 @@ export const ProjectsTimeline = () => {
                   </div>
 
                   {/* Project Card */}
-                  <div className={`w-full max-w-md ${isLeft ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}>
+                  <div className={`w-full max-w-md ${isLeft ? 'mr-auto pr-4 lg:pr-8' : 'ml-auto pl-4 lg:pl-8'}`}>
                     <Card className={`
                       holographic transition-all duration-500 hover:scale-105
                       ${project.status === 'current' ? 'border-primary/50 glow-primary' : ''}
@@ -158,8 +158,8 @@ export const ProjectsTimeline = () => {
 
                   {/* Connecting Line */}
                   <div className={`
-                    absolute top-1/2 w-8 h-0.5 bg-primary/30
-                    ${isLeft ? 'left-1/2 ml-8' : 'right-1/2 mr-8'}
+                    absolute top-1/2 w-4 lg:w-8 h-0.5 bg-primary/30 hidden sm:block
+                    ${isLeft ? 'left-1/2 ml-4 lg:ml-8' : 'right-1/2 mr-4 lg:mr-8'}
                   `}></div>
                 </div>
               );

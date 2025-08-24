@@ -107,14 +107,14 @@ export const AboutMe = () => {
               </p>
 
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                <Badge variant="default" className="font-cyber">
-                  <GraduationCap className="w-4 h-4 mr-1" />
+                <Badge variant="default" className="font-cyber text-xs sm:text-sm">
+                  <GraduationCap className="w-3 sm:w-4 h-3 sm:h-4 mr-1" />
                   IT Engineering Student
                 </Badge>
-                <Badge variant="secondary" className="font-cyber">
+                <Badge variant="secondary" className="font-cyber text-xs sm:text-sm">
                   Full-Stack Developer
                 </Badge>
-                <Badge variant="outline" className="font-cyber">
+                <Badge variant="outline" className="font-cyber text-xs sm:text-sm">
                   Future Tech Leader
                 </Badge>
               </div>

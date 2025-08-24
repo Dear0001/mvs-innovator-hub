@@ -122,6 +122,12 @@ All colors MUST be HSL.
 }
 html {
   scroll-behavior: smooth; /* ✅ Smooth scrolling */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Enhanced smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
 }
 
 @layer base {
