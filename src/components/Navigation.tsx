@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Education", href: "#education" },
-  { name: "Contact", href: "#contact" }
+  { name: "Contact", href: "#contact" },
 ];
 
 export const Navigation = () => {
@@ -22,8 +22,8 @@ export const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.href.substring(1));
-      const currentSection = sections.find(section => {
+      const sections = navItems.map((item) => item.href.substring(1));
+      const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -31,20 +31,20 @@ export const Navigation = () => {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.substring(1));
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
@@ -56,7 +56,7 @@ export const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="text-xl font-cyber font-bold neon-text">
-              PHEA<span className="text-secondary">2050</span>
+              PHEA<span className="text-secondary">Dalen</span>
             </div>
           </div>
 
@@ -69,9 +69,10 @@ export const Navigation = () => {
                   onClick={() => scrollToSection(item.href)}
                   className={`
                     px-3 py-2 rounded-md text-sm font-cyber transition-all duration-300
-                    ${activeSection === item.href.substring(1)
-                      ? 'text-primary glow-primary bg-primary/10' 
-                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                    ${
+                      activeSection === item.href.substring(1)
+                        ? "text-primary glow-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                     }
                   `}
                 >
@@ -89,7 +90,11 @@ export const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-primary"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -104,9 +109,10 @@ export const Navigation = () => {
                   onClick={() => scrollToSection(item.href)}
                   className={`
                     block px-3 py-2 rounded-md text-base font-cyber w-full text-left transition-all duration-300
-                    ${activeSection === item.href.substring(1)
-                      ? 'text-primary glow-primary bg-primary/10' 
-                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                    ${
+                      activeSection === item.href.substring(1)
+                        ? "text-primary glow-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                     }
                   `}
                 >
