@@ -2,12 +2,21 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Import skill logos
+import javaLogo from "@/assets/skills/java.svg";
+import reactLogo from "@/assets/skills/react.svg";
+import springLogo from "@/assets/skills/spring.svg";
+import postgresLogo from "@/assets/skills/postgresql.svg";
+import dockerLogo from "@/assets/skills/docker.svg";
+import golangLogo from "@/assets/skills/golang.svg";
+
 interface Skill {
   name: string;
   category: string;
   level: number;
   subSkills: string[];
   color: 'primary' | 'secondary' | 'accent';
+  logo: string;
 }
 
 const skills: Skill[] = [
@@ -16,42 +25,48 @@ const skills: Skill[] = [
     category: "Backend",
     level: 95,
     subSkills: ["J2SE", "J2EE", "Maven", "MVC Pattern", "Spring Framework"],
-    color: "primary"
+    color: "primary",
+    logo: javaLogo
   },
   {
     name: "Web Galaxy",
     category: "Frontend",
     level: 90,
     subSkills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Tailwind CSS", "Next.js"],
-    color: "secondary"
+    color: "secondary",
+    logo: reactLogo
   },
   {
     name: "Spring Constellation",
     category: "Framework",
     level: 92,
     subSkills: ["Spring Boot", "Spring JPA", "MyBatis", "REST APIs", "Spring Security", "JWT", "Spring Cloud"],
-    color: "accent"
+    color: "accent",
+    logo: springLogo
   },
   {
     name: "Database Nebula",
     category: "Data",
     level: 88,
     subSkills: ["Oracle", "PostgreSQL", "MySQL", "CouchDB", "SQLite"],
-    color: "primary"
+    color: "primary",
+    logo: postgresLogo
   },
   {
     name: "DevOps Solar System",
     category: "Tools",
     level: 85,
     subSkills: ["Linux", "Docker", "GitHub", "Shell Script", "CI/CD"],
-    color: "secondary"
+    color: "secondary",
+    logo: dockerLogo
   },
   {
     name: "Blockchain Dimension",
     category: "Emerging",
     level: 80,
     subSkills: ["Hyperledger Fabric", "Smart Contracts", "Golang", "Web3"],
-    color: "accent"
+    color: "accent",
+    logo: golangLogo
   }
 ];
 
@@ -100,14 +115,16 @@ export const SkillsUniverse = () => {
                   ${skill.color === 'secondary' ? 'glow-secondary' : ''}
                   ${skill.color === 'accent' ? 'glow-accent' : ''}
                   ${selectedSkill?.name === skill.name ? 'scale-125 sm:scale-150' : ''}
+                  bg-background/50 backdrop-blur-sm border-2
+                  ${skill.color === 'primary' ? 'border-primary/50' : ''}
+                  ${skill.color === 'secondary' ? 'border-secondary/50' : ''}
+                  ${skill.color === 'accent' ? 'border-accent/50' : ''}
                 `}>
-                  <div className={`
-                    w-6 sm:w-8 lg:w-12 h-6 sm:h-8 lg:h-12 rounded-full
-                    ${skill.color === 'primary' ? 'bg-primary' : ''}
-                    ${skill.color === 'secondary' ? 'bg-secondary' : ''}
-                    ${skill.color === 'accent' ? 'bg-accent' : ''}
-                    pulse-glow
-                  `}></div>
+                  <img 
+                    src={skill.logo} 
+                    alt={skill.name}
+                    className="w-6 sm:w-8 lg:w-10 h-6 sm:h-8 lg:h-10 object-contain filter drop-shadow-lg"
+                  />
                 </div>
                 
                 {/* Skill Name */}
@@ -136,15 +153,32 @@ export const SkillsUniverse = () => {
           <Card className="mt-12 holographic max-w-2xl mx-auto">
             <CardContent className="p-6">
               <div className="text-center mb-6">
-                <h3 className={`
-                  text-2xl font-cyber font-bold mb-2
-                  ${selectedSkill.color === 'primary' ? 'text-primary' : ''}
-                  ${selectedSkill.color === 'secondary' ? 'text-secondary' : ''}
-                  ${selectedSkill.color === 'accent' ? 'text-accent' : ''}
-                `}>
-                  {selectedSkill.name}
-                </h3>
-                <Badge variant="secondary">{selectedSkill.category}</Badge>
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className={`
+                    w-16 h-16 rounded-full glass flex items-center justify-center
+                    ${selectedSkill.color === 'primary' ? 'glow-primary border-primary/50' : ''}
+                    ${selectedSkill.color === 'secondary' ? 'glow-secondary border-secondary/50' : ''}
+                    ${selectedSkill.color === 'accent' ? 'glow-accent border-accent/50' : ''}
+                    bg-background/50 backdrop-blur-sm border-2
+                  `}>
+                    <img 
+                      src={selectedSkill.logo} 
+                      alt={selectedSkill.name}
+                      className="w-10 h-10 object-contain filter drop-shadow-lg"
+                    />
+                  </div>
+                  <div>
+                    <h3 className={`
+                      text-2xl font-cyber font-bold mb-2
+                      ${selectedSkill.color === 'primary' ? 'text-primary' : ''}
+                      ${selectedSkill.color === 'secondary' ? 'text-secondary' : ''}
+                      ${selectedSkill.color === 'accent' ? 'text-accent' : ''}
+                    `}>
+                      {selectedSkill.name}
+                    </h3>
+                    <Badge variant="secondary">{selectedSkill.category}</Badge>
+                  </div>
+                </div>
               </div>
 
               {/* Skill Level */}
