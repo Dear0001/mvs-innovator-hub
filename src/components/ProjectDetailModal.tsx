@@ -123,6 +123,27 @@ const projectDetails: { [key: string]: any } = {
       "Implementing real-time processing at scale",
       "Meeting strict regulatory requirements"
     ]
+  },
+  "5": {
+    fullDescription: "Cambodia's Khmer cuisine is diverse, unique, and deeply integrated with the cultures of Cambodia. Unfortunately, even the most devoted food lovers find it extremely difficult to locate authentic Khmer recipes online. Even with the existence of global culinary platforms, many do not have a specific section for Khmer foods, making it impossible for customers to access authentic recipes. This gap in digital culinary resources created the need of an application solely dedicated to the preservation and promotion of traditional Cambodian cuisines.",
+    achievements: [
+      "Preserved traditional Cambodian recipes digitally",
+      "Created comprehensive recipe database",
+      "Implemented advanced search and filtering",
+      "Built user-friendly recipe sharing platform"
+    ],
+    features: [
+      "Authentic Khmer recipe collection",
+      "Advanced recipe search and filtering",
+      "User recipe sharing and rating system",
+      "Cultural context and cooking tips",
+      "Ingredient substitution recommendations"
+    ],
+    challenges: [
+      "Researching and validating authentic recipes",
+      "Building scalable backend architecture",
+      "Implementing complex search algorithms"
+    ]
   }
 };
 

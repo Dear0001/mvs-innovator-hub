@@ -87,6 +87,24 @@ const projects: Project[] = [
     status: "current",
     icon: Zap,
   },
+  {
+    id: "5",
+    title: "Krorya",
+    period: "2023-2024",
+    role: "Backend Developer",
+    description:
+      "Digital platform dedicated to preserving and promoting authentic Cambodian Khmer cuisine recipes and culinary heritage.",
+    technologies: [
+      "Spring Data JPA",
+      "Next.js",
+      "Redux",
+      "TypeScript",
+      "PostgreSQL",
+    ],
+    category: "Web Application",
+    status: "completed",
+    icon: Code,
+  },
 ];
 
 export const ProjectsTimeline = () => {
