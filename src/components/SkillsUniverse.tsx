@@ -135,13 +135,15 @@ export const SkillsUniverse = () => {
                 </div>
 
                 {/* Connecting Lines */}
-                <div className="absolute top-1/2 left-1/2 w-0.5 bg-primary/30 origin-left"
-                     style={{
-                       height: '2px',
-                       width: `${radius}px`,
-                       transform: `translate(-50%, -50%) rotate(${180 + angle * (180/Math.PI)}deg)`,
-                       transformOrigin: 'left center'
-                     }}>
+                <div 
+                  className="absolute w-0.5 bg-primary/30"
+                  style={{
+                    height: `${radius}px`,
+                    left: '50%',
+                    top: '50%',
+                    transform: `translate(-50%, -100%) rotate(${angle * (180/Math.PI)}deg)`,
+                    transformOrigin: 'center bottom'
+                  }}>
                 </div>
               </div>
             );
